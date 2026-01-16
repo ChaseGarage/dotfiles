@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# capture a region with slurp & hyprshot
+file="$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
+hyprshot -m region --freeze --silent -o "$HOME/Pictures/Screenshots" -f "$(basename "$file")"
+
+# show it using satty (optional)
+satty --filename "$file"
+
