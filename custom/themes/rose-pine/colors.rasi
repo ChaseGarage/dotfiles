@@ -1,0 +1,9 @@
+/* Auto-generated from walker.css for theme: rose-pine */
+* {
+    background:     #FAF4EDFF;
+    background-alt: #FAF4EDFF;
+    foreground:     #575279FF;
+    selected:       #88C0D0FF;
+    active:         #575279FF;
+    urgent:         #88C0D0FF;
+}

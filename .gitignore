@@ -1,0 +1,23 @@
+autostart/
+brave-flags.conf
+BraveSoftware/
+btop/
+cachyos/
+cachyos-hello.json
+dconf/
+fish/
+gtk-3.0/
+kitty/
+kwalletrc
+micro/
+mimeapps.list
+nautilus/
+neofetch/
+pulse/
+Qtproject.conf
+spotify/
+systemd/
+Unknown\ Organization/
+user-dirs.dirs
+user-dirs.locale
+vlc/

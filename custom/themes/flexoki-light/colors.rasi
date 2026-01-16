@@ -1,0 +1,9 @@
+/* Auto-generated from walker.css for theme: flexoki-light */
+* {
+    background:     #FFFCF0FF;
+    background-alt: #FFFCF0FF;
+    foreground:     #100F0FFF;
+    selected:       #205EA6FF;
+    active:         #205EA6FF;
+    urgent:         #205EA6FF;
+}

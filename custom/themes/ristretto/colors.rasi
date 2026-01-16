@@ -1,0 +1,9 @@
+/* Auto-generated from walker.css for theme: ristretto */
+* {
+    background:     #2C2525FF;
+    background-alt: #2C2525FF;
+    foreground:     #E6D9DBFF;
+    selected:       #F9CC6CFF;
+    active:         #E6D9DBFF;
+    urgent:         #FABD2FFF;
+}

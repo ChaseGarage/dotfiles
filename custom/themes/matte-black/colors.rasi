@@ -1,0 +1,9 @@
+/* Auto-generated from walker.css for theme: matte-black */
+* {
+    background:     #121212FF;
+    background-alt: #121212FF;
+    foreground:     #EAEAEAFF;
+    selected:       #E68E0DFF;
+    active:         #EAEAEA88;
+    urgent:         #B91C1CFF;
+}

@@ -1,0 +1,9 @@
+/* Auto-generated from walker.css for theme: hackerman */
+* {
+    background:     #0B0C16FF;
+    background-alt: #0B0C16FF;
+    foreground:     #DDF7FFFF;
+    selected:       #50F872FF;
+    active:         #6A6E95FF;
+    urgent:         #829DD4FF;
+}

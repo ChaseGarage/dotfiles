@@ -1,0 +1,9 @@
+/* Auto-generated from walker.css for theme: osaka-jade */
+* {
+    background:     #11221CFF;
+    background-alt: #11221CFF;
+    foreground:     #509475FF;
+    selected:       #549E6AFF;
+    active:         #509475FF;
+    urgent:         #E1B55EFF;
+}

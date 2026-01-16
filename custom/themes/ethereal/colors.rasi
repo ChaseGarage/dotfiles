@@ -1,0 +1,9 @@
+/* Auto-generated from walker.css for theme: ethereal */
+* {
+    background:     #060B1EFF;
+    background-alt: #060B1EFF;
+    foreground:     #FFCEADFF;
+    selected:       #7D82D9FF;
+    active:         #6D7DB6FF;
+    urgent:         #7D82D9FF;
+}

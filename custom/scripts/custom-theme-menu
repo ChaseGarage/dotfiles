@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPTS_DIR="$HOME/.config/custom/scripts"
+THEME_LIST="$SCRIPTS_DIR/custom-theme-list"
+THEME_SET="$SCRIPTS_DIR/custom-theme-set"
+
+ROFI_RASI="$HOME/.config/custom/current/theme/rofi.rasi"
+
+err() { notify-send "Theme menu" "$1"; exit 1; }
+
+command -v rofi >/dev/null 2>&1 || err "rofi not found"
+[[ -x "$THEME_LIST" ]] || err "Missing or non-executable: $THEME_LIST"
+[[ -x "$THEME_SET"  ]] || err "Missing or non-executable: $THEME_SET"
+[[ -f "$ROFI_RASI"  ]] || err "Missing rofi theme: $ROFI_RASI"
+
+# Read display names
+mapfile -t DISPLAY_NAMES < <("$THEME_LIST" | sed '/^[[:space:]]*$/d')
+[[ ${#DISPLAY_NAMES[@]} -gt 0 ]] || err "custom-theme-list returned no themes"
+
+# Convert display name -> slug (matches your custom-theme-set normalization)
+to_slug() {
+  local s="$1"
+  s="$(printf '%s' "$s" | sed -E 's/<[^>]+>//g')"   # strip any accidental markup
+  s="$(printf '%s' "$s" | tr '[:upper:]' '[:lower:]')"
+  s="$(printf '%s' "$s" | tr ' ' '-')"
+  s="$(printf '%s' "$s" | tr -s '-' '-')"
+  printf '%s' "$s"
+}
+
+# Build a mapping file (display -> slug) and a plain menu file
+tmp_dir="$(mktemp -d)"
+trap 'rm -rf "$tmp_dir"' EXIT
+map_file="$tmp_dir/map.tsv"
+menu_file="$tmp_dir/menu.txt"
+
+: >"$map_file"
+: >"$menu_file"
+
+for display in "${DISPLAY_NAMES[@]}"; do
+  slug="$(to_slug "$display")"
+  printf '%s\t%s\n' "$display" "$slug" >>"$map_file"
+  printf '%s\n' "$display" >>"$menu_file"
+done
+
+# Launch rofi (plain text menu)
+selected="$(cat "$menu_file" | rofi -dmenu -i -p "Theme" -theme "$ROFI_RASI")"
+[[ -n "${selected:-}" ]] || exit 0
+
+slug="$(awk -F'\t' -v sel="$selected" '$1==sel {print $2; exit}' "$map_file")"
+[[ -n "${slug:-}" ]] || err "Could not map selection to theme slug: $selected"
+
+"$THEME_SET" "$slug"
+notify-send "Theme" "Set to: $selected"
+

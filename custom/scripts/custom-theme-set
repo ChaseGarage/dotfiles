@@ -1,0 +1,45 @@
+#!/bin/bash
+
+if [[ -z $1 && $1 != "CNCLD" ]]; then
+  echo "Usage: omarchy-theme-set <theme-name>"
+  exit 1
+fi
+
+SCRIPTS_DIR="$HOME/.config/custom/scripts"
+THEMES_DIR="$HOME/.config/custom/themes/"
+CURRENT_THEME_DIR="$HOME/.config/custom/current/theme"
+
+THEME_NAME=$(echo "$1" | sed -E 's/<[^>]+>//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+THEME_PATH="$THEMES_DIR/$THEME_NAME"
+
+# Check if the theme entered exists
+if [[ ! -d "$THEME_PATH" ]]; then
+  echo "Theme '$THEME_NAME' does not exist in $THEMES_DIR"
+  exit 1
+fi
+
+# Update theme symlinks
+ln -nsf "$THEME_PATH" "$CURRENT_THEME_DIR"
+
+# Change background with theme
+$SCRIPTS_DIR/custom-theme-bg-next
+
+# Restart components to apply new theme
+if pgrep -x waybar >/dev/null; then
+  $SCRIPTS_DIR/custom-restart-waybar
+fi
+$SCRIPTS_DIR/custom-restart-swayosd
+$SCRIPTS_DIR/custom-restart-terminal
+hyprctl reload
+pkill -SIGUSR2 btop
+makoctl reload
+
+# Change gnome, browser, vscode, cursor themes
+$SCRIPTS_DIR/custom-theme-set-gnome
+$SCRIPTS_DIR/custom-theme-set-browser
+$SCRIPTS_DIR/custom-theme-set-vscode
+$SCRIPTS_DIR/custom-theme-set-cursor
+$SCRIPTS_DIR/custom-theme-set-obsidian
+
+# Call hook on theme set
+# omarchy-hook theme-set "$THEME_NAME"

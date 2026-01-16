@@ -1,0 +1,5 @@
+#!/bin/bash
+
+hyprctl dispatch exec '[float; nofocus] pkill -x waybar'
+sleep 0.2
+hyprctl dispatch exec waybar

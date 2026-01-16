@@ -1,0 +1,9 @@
+/* Auto-generated from walker.css for theme: fireside */
+* {
+    background:     #0A1220FF;
+    background-alt: #0A1220FF;
+    foreground:     #F0F2F5FF;
+    selected:       #889889FF;
+    active:         #555C65FF;
+    urgent:         #889889FF;
+}
