@@ -93,6 +93,7 @@ window#waybar.empty #window{
 
 #tray {
   background-color: @border;
+  color: @foreground;
 }
 
 #clock, #idle_inhibitor, #custom-updatespacman {

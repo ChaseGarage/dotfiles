@@ -204,7 +204,7 @@
     "format-connected": "",
     "format-no-controller": "",
     "tooltip-format": "Devices connected: {num_connections}",
-//    "on-click": "omarchy-launch-bluetooth"
+    "on-click": "sh -lc 'ghostty --class=com.tmchase.scratchtui --window-padding-x=0 --window-padding-y=0 --window-padding-balance=true --window-padding-color=extend-always -e bluetui'",
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -222,7 +222,7 @@
     }
   },
  "tray": {
-    "icon-size": 14,
+    "icon-size": 16,
     "spacing": 5,
     "show-passive-items": true
   },
