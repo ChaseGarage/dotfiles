@@ -196,7 +196,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-//    "on-click": "omarchy-launch-wifi"
+    "on-click": "command -v impala >/dev/null 2>&1 && ghostty --class=com.tmchase.scratchtui --window-padding-x=0 --window-padding-y=0 --window-padding-balance=true --window-padding-color=extend-always -e impala",
   },
   "bluetooth": {
     "format": " {status}",
