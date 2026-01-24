@@ -19,11 +19,12 @@
   outline: none;
   margin: 0;
   padding: 0px;
+  color: @foreground;
 }
 
 .floating-notifications.background .notification-row .notification-background {
   background: @background;
-  border: 0px solid @border;
+  border: 2px solid @border;
   border-radius: 10px;
   margin: 16px;
   padding: 0;

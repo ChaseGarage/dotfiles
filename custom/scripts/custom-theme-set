@@ -30,9 +30,10 @@ if pgrep -x waybar >/dev/null; then
 fi
 $SCRIPTS_DIR/custom-restart-swayosd
 $SCRIPTS_DIR/custom-restart-terminal
+$SCRIPTS_DIR/custom-restart-swaync
 hyprctl reload
 pkill -SIGUSR2 btop
-makoctl reload
+#makoctl reload
 
 # Change gnome, browser, vscode, cursor themes
 $SCRIPTS_DIR/custom-theme-set-gnome

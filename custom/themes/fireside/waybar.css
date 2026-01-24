@@ -2,6 +2,7 @@
 @define-color foreground #f0f2f5;
 @define-color accent #e06b58;
 @define-color border #0a1220;
+@define-color critical #e06b58;
 
 @define-color black #0a1220;
 @define-color green #889889;

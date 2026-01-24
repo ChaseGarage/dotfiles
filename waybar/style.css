@@ -122,8 +122,8 @@ color: @foreground;
 
 #battery.charging,
 #battery.plugged {
-  color: @foreground;
-  background-color: @border;
+  color: @background;
+  background-color: @accent;
 }
 
 @keyframes blink {
@@ -150,8 +150,8 @@ color: @foreground;
 }
 
 #power-profiles-daemon.performance {
-  background-color: #ff9b71;
-  color: #000;
+  background-color: @accent;
+  color: @background;
 }
 
 #power-profiles-daemon.balanced {
@@ -180,8 +180,8 @@ color: @foreground;
 }
 
 #network.disconnected {
-  background-color: #ff9b71;
-  color: #000;
+  background-color: @critical;
+  color: @foreground;
 }
 
 #bluetooth {
@@ -190,7 +190,7 @@ color: @foreground;
 }
 
 #bluetooth.disabled {
-  background-color: #ff9b71;
+  background-color: @critical;
   color: #000;
 }
 
@@ -200,7 +200,8 @@ color: @foreground;
 }
 
 #pulseaudio.muted {
-  background-color: #ff9b71;
+  background-color: @critical;
+  color: @foreground;
 }
 
 tooltip {

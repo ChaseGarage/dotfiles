@@ -5,7 +5,7 @@
 	"cssPriority": "user",
 
   "control-center-width": 380,
-  "control-center-height": 860, 
+  "control-center-height": 1040, 
   "control-center-margin-top": 2,
   "control-center-margin-bottom": 2,
   "control-center-margin-right": 1,
@@ -42,7 +42,6 @@
   },
   "widgets": [
     "mpris",
-    "buttons-grid",
     "volume",
     "backlight",
     "dnd",
@@ -86,48 +85,9 @@
     },
     "backlight": {
       "label": "󰃠 ",
-      "device": "amdgpu_bl1",
+      "device": "intel_backlight",
       "subsystem": "backlight", 
       "min": 10
-    },
-    "buttons-grid": {
-      "actions": [
-        {
-          "label": "",
-          "command": "amixer set Master toggle",
-          "name": "btn-audio"
-        },
-        {
-          "label": "",
-          "command": "amixer set Capture toggle"
-        },
-        {
-          "label": " ",
-          "command":  "command -v impala >/dev/null 2>&1 && ghostty --class=com.tmchase.scratchtui --window-padding-x=0 --window-padding-y=0 --window-padding-balance=true --window-padding-color=extend-always -e impala"
-        },
-        {
-          "label": "󰂯",
-          "command": "sh -lc 'ghostty --class=com.tmchase.scratchtui --window-padding-x=0 --window-padding-y=0 --window-padding-balance=true --window-padding-color=extend-always -e bluetui'"
-        },
-        {
-          "label": "󰏘",
-          "command": "hyprpicker"
-        },
-
-        {
-          "label": "󰋩",
-          "command": "swaync-client -t -sw;bash ~/.config/custom/scripts/custom-theme-menu"
-        },
-        {     
-          "label": " ",
-          "command": "swaync-client -t -sw; ~/.config/custom/scripts/custom-take-screenshot"
-        },
-        {
-          "label": "",
-          "command": "swaync-client -t -sw; ~/.config/rofi/scripts/powermenu.sh"
-        }
-
-      ]
     }
   }
 }
