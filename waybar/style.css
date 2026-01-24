@@ -97,6 +97,14 @@ window#waybar.empty #window{
   margin: 5px 5px 5px 0;
 }
 
+#custom-notification{
+  background-color: @border;
+  color: @foreground;
+  padding: 0 8px;
+  font-size: 12px;
+  margin: 5px 5px 5px 0;
+}
+
 #tray {
   background-color: @border;
   color: @foreground;
