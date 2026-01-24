@@ -17,6 +17,12 @@ window#waybar {
   color: @foreground;
   border-radius: 10px;
 }
+#custom-days_since{
+  padding: 0 8px;
+  color: @foreground;
+  background-color: @border;
+  margin: 5px 5px 5px 0;
+}
 
 #custom-powermenu {
   font-size: 15px;
@@ -87,7 +93,7 @@ window#waybar.empty #window{
 #backlight,
 #custom-updatespacman{
   padding: 0 8px;
-  color: #e6d8ba;
+  color: @foreground;
   margin: 5px 5px 5px 0;
 }
 
