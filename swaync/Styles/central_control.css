@@ -16,7 +16,7 @@
 /* ==================== CONTROL CENTER ==================== */
 
 .control-center {
-  background: alpha(@background, 0.8);
+  background: alpha(@background, 0.95);
   border-radius: 5px;
   color: @foreground;
   margin: 12px;
